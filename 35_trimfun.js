@@ -1,5 +1,5 @@
-function trimfun(string){
+function trimstring(string){
             console.log(string.trim());
         }
-trimfun("   karka academy  ") 
+trimtring("   karka academy  ") 
 
