@@ -6,8 +6,8 @@ function countVowels(word){
             count++;
         }
     }
-    console.log("word:",word)
-    console.log("vowels:",count)
+    console.log("word:",word);
+    console.log("vowels:",count);
 
 }
 countVowels("joel shyam")  

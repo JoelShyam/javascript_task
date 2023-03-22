@@ -4,4 +4,4 @@ for(i=1;i<21;i++){
         array.push(i);
     }
 }
- console.log(array)
+ console.log(array);

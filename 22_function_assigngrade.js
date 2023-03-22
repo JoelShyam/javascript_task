@@ -11,7 +11,7 @@ function assigngrade(marks){
     else if(marks>=60 & marks<70){
         console.log("D")
     }
-    else if(marks<60){
+    else{
         console.log("F")
     }
 }
