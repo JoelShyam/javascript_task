@@ -1,0 +1,36 @@
+let resume={
+    Name:"JOEL SHYAM.N",
+    Phone:"+91 9487621409",
+    email:"joelshyamjs1999@gmail.com",
+    Objective:"Looking forward for an opportunity where in I can improve my academic and professional qualification and utilize my wisdom in a highly reputed organization.",
+    Personal_Skills:["Self motivated","Hard Worker","Positive Attitude"],  
+    Educational_Qualification:[
+    BE={   Branch:"Electronics and Communication Engineering",
+        Institution:"St.Xavier’s Catholic College of Engineering",
+        Place:"Chunkankadai,Kanyakumari District",
+        Marks:77,
+        Year:"2017-2021"},
+    HSC={   Branch:"Maths-Biology",
+        Institution:"Seventhday Adventist Matric.Higher Secondary School",
+        Place:"Pulierranghy, Kanyakumari District",
+        Marks:77,
+        Year:"2016-2017"},
+    SSLC={Branch:"General",
+        Institution:"Seventhday Adventist Matric.Higher Secondary School",
+        Place:"Pulierranghy,Kanyakumari District",
+        Marks:94,
+        Year:"2014-2015"}],
+        Project_Work_Done:"In final year project on the topic of ' HOMEAUTOMATION USING GOOGLE ASSISTANT'",
+        Software_Skills:["MS-Word","MS-PowerPoint"],
+        Interests:["Listening music","Playing Games"],
+        PERSONAL_DETAILS:{ Gender:"Male",
+                           Date_of_Birth:"14-10-1999",
+                           Father_Name:"S.NESAMONY",
+                           Address:"8-163/A,Manger Square,Thirparappu,Kanyakumari-629161.",
+                           Language_Known:["Tamil","English","Malayalam"]},
+        Declaration:"I hereby declare that all the above furnished information is true to the best of my knowledge and belief.",
+        regards:"Yours faithfully",                                                                                               
+        signature:"JOEL SHYAM.N"
+  
+}
+console.log(resume);
