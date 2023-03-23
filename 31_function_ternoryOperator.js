@@ -1,5 +1,5 @@
 function ternoryOperator(num){
     let result=(num%2==0)?"num is even":"num is odd";
-    console.log(result);
+    return result;
 }
-ternoryOperator(8)
+console.log(ternoryOperator(8));

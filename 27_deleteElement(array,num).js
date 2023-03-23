@@ -1,9 +1,9 @@
 function deleteElement(array,num){
-    let arr=[];
     for(let i=0;i<array.length;i++){
-    if(array[i] != num){
-         arr.push(array[i]);
+    if(array[i] == num){
+         array.splice(i,1);
         }
-    }  console.log(arr);
+    } 
+    return array;
 }
-deleteElement([1, 2, 3, 4, 3, 5, 6, 3, 7],3)
+console.log(deleteElement([1, 2, 3, 4, 3, 5, 6, 3, 7],3));

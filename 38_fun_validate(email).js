@@ -1,5 +1,5 @@
 function validate(email){
-    let mail_format=/^\S+@\S+\.+/;
+    let mail_format=/^\S+@\S+\.+\S/;
     if(mail_format.test(email)){
         console.log("the email address is valid");
     }
@@ -10,4 +10,4 @@ function validate(email){
 validate("joel77gmail.com")
 validate("joel77@gmail.com")
 validate("joel77@gmailcom")
-validate("joel77@gmail")
+validate("joel77@gmail.")

@@ -5,6 +5,6 @@ for(i=0;i<numbers.length;i++){
     if(numbers[i]>=18){
         arr.push(numbers[i]);
     }
-}console.log(arr);
+}return arr;
 }
-greater_than_18()
+console.log(greater_than_18())

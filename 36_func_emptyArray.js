@@ -1,7 +1,8 @@
 function emptyArray(array){
- array.length=0;
+    for(i=0;i<array.length;i++){
+ console.log("before:",array)
+ array.splice(i);
+ return array;
 }
-let myArray=[1,2,3,4,5];
-console.log("before emptying:",myArray);
-emptyArray(myArray);
-console.log("after emptying:",myArray)
+}
+console.log("after:",emptyArray([1,2,3,4,5]));

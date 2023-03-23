@@ -1,5 +1,6 @@
 function calculatesum(num1,num2){
     let result=num1+num2;
-    console.log("num1=",num1,"num2=",num2,"result=",result);
+    console.log("num1=",num1,"num2=",num2)
+    return result;
 }
-calculatesum(10,5)
+console.log(calculatesum(10,5))
