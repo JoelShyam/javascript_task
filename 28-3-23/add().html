@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+      <body>
+            <input type="number" id="f_input" placeholder="Enter Input 1"/>
+            <input type="number" id="s_input" placeholder="Enter Input 2"/>
+            <span id="result"></span>
+            <button onclick="add()">Add</button>
+	</body>
+      <script>
+            let history=[];
+            function add(){
+                  let input1=Number(document.getElementById('f_input').value);
+                  let input2=Number(document.getElementById('s_input').value);
+                  let result=input1+input2;
+                  let newObj={
+                              f_input:input1,
+                              s_input:input2,
+                              result:result,
+                              
+                         }
+                         newObj.oddoreven=(result%2==0)?"even":"odd"
+                  history.push(newObj);
+                  console.log(history);
+            }    
+            add()
+            </script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color:rgb(0, 225, 232);">
+    
+    <label>Name: </label><input type="text" id="name" placeholder="full name"><br><br>
+    <label>Mobile Number: </label><input type="text" id="mob_num" placeholder="number"><br><br>
+    <label>Email ID: </label><input type="text" id="email" placeholder="email address"><br><br>
+    <label>Date of Birth:</label><input type="date" id="bday" value="yyyy-mm-dd" placeholder="Enter DoB"/><br><br>
+    <label>Gender:</label>
+    <select id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select><br><br>
+    <label>Skills</label><br>
+        <input type="checkbox" name="skill" value="js">JS</input><br>
+        <input type="checkbox" name="skill"value="html">HTML</input><br>
+        <input type="checkbox" name="skill" value="css">CSS</input><br>
+        <input type="checkbox" name="skill" value="python">Python</input><br><br>
+    <label>IsMarried</label><br>
+        <input type="radio" name="ismarried" value="Yes">yes<br>
+        <input type="radio" name="ismarried" value="NO">no<br><br>
+    <button onclick="profile()">submit</button>
+</body>
+
+<script>
+let personal_details=[];
+function profile(){
+    let name = document.getElementById('name').value;
+    let mobnum=document.getElementById('mob_num').value;
+    let email=document.getElementById('mob_num').value;
+    let dob=document.getElementById('bday').value;
+    let gen=document.getElementById("gender").value;
+    var ski=document.getElementsByName("skill");
+    let skills=[];
+    var skill;
+    for (var i = 0; i < ski.length; i++) {
+            if (ski[i].checked) {
+                skill = ski[i].value
+                skills.push(skill);
+            }
+            
+        }
+    
+    var marriage = document.getElementsByName('ismarried');
+    var married;
+    for (var i = 0; i <marriage.length; i++) {
+        if (marriage[i].checked) {
+            married = marriage[i].value;
+            }
+        }
+    let details={Name:name,
+                 MobNumber:mobnum,
+                 Email:email,
+                 DateofBirth:dob,
+                 Gender:gen,
+                 Skills:skills,
+                 IsMarried:married}
+    personal_details.push(details);
+    console.log(personal_details);
+} 
+  
+</script>
+</html>

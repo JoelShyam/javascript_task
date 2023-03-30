@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+      <body>
+            <label>Name:</label><input type="text" id="name" placeholder="Enter name"/><br><br>
+            <label>Mob Num:</label><input type="text" id="mob_num" placeholder="Enter mobile number"/><br><br>
+            <label>Date of Birth:</label><input type="date" id="bday" value="dd-mm-yyyy" placeholder="Enter DoB"/><br><br>
+            <label>Email Id:</label><input type="text" id="email" placeholder="Enter email id"/><br><br>
+            <button onclick="console.log(resume())">submit</button>
+	</body>
+      <script>
+            let arr=[];
+            function resume(){
+                  let input1=document.getElementById('name').value;
+                  let input2=document.getElementById('mob_num').value;
+                  let input3=document.getElementById('bday').value;
+                  let input4=document.getElementById('email').value;
+                  let obj={ name:input1,
+                            mob_num:input2,
+                            bday:input3,
+                            email:input4
+                        }
+                        arr.push(obj);
+                        return arr;
+            }    
+            resume()
+            </script>
+</html>
