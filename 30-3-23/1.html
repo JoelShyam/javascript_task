@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Name: </label><input type="text" id="name" placeholder="full name" onkeyup="namevalue"><br><br>
+    <label>Mobile Number: </label><input type="text" id="mob_num" placeholder="number"><br><br>
+    <label>Skills</label><br>
+        <input type="checkbox" name="skill" value="php">PHP</input><br>
+        <input type="checkbox" name="skill"value="js">JS</input><br>
+        <input type="checkbox" name="skill" value="java">JAVA</input><br>
+        <input type="checkbox" name="skill" value=".net">.NET</input><br><br>
+    <label>Education</label><br>
+    <table border="1">
+        <thead>
+         
+        </thead>
+        
+        <tbody>
+          <tr>
+            <th>Sl.No</th>
+            <th>Name</th>
+            <th>Institute</th>
+            <th>Year</th>
+            <th>Mark in percentage</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><input type="text" placeholder="Education name" onkeyup="getEducationValue(0,'name',this.value)" /></td>
+            <td><input type="text" placeholder="Institute name" onkeyup="getEducationValue(0,'institute',this.value)" /></td>
+            <td><input type="text" placeholder="Year of passed" onkeyup="getEducationValue(0,'year',this.value)"   /></td>
+            <td><input type="text" placeholder="Mark" onkeyup="getEducationValue(0,'mark',this.value)"   /></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><input type="text" placeholder="Education name" onkeyup="getEducationValue(1,'name',this.value)" /></td>
+            <td><input type="text" placeholder="Institute name" onkeyup="getEducationValue(1,'institute',this.value)" /></td>
+            <td><input type="text" placeholder="Year of passed" onkeyup="getEducationValue(1,'year',this.value)"   /></td>
+            <td><input type="text" placeholder="Mark" onkeyup="getEducationValue(0,'mark',this.value)"   /></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><input type="text" placeholder="Education name" onkeyup="getEducationValue(2,'name',this.value)" /></td>
+            <td><input type="text" placeholder="Institute name" onkeyup="getEducationValue(2,'institute',this.value)" /></td>
+            <td><input type="text" placeholder="Year of passed" onkeyup="getEducationValue(2,'year',this.value)"   /></td>
+            <td><input type="text" placeholder="Mark" onkeyup="getEducationValue(0,'mark',this.value)"   /></td>
+          </tr>
+        </tbody>
+    </table>
+    <button onclick="profile()">submit</button>
+</body>
+<script>
+    let details={};
+    let education = [];
+    function getEducationValue(i,k,v){
+        
+  
+        education[i] = { 
+          ...education[i],
+          [k] : v
+        };
+       
+    }  console.log(education);
+
+    function profile(){
+        let name = document.getElementById('name').value;
+        let mobnum=document.getElementById('mob_num').value;
+        var skill=document.getElementsByName("skill");
+    let skills=[];
+    for (var i = 0; i < skill.length; i++) {
+            if (skill[i].checked) {
+            skills.push(skill[i].value);
+            }
+            
+        }
+       
+        
+        details.Name=name;
+        details.MobileNumber=mobnum;
+        details.Skills=skills;
+        details.Education=education;
+        console.log(details);
+    }
+    
+   
+</script>
+</html>

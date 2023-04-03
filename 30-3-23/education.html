@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Education</label><br>
+    <table border="1">
+        <thead>
+         
+        </thead>
+        
+        <tbody>
+          <tr>
+            <th>Sl.No</th>
+            <th>Name</th>
+            <th>Institute</th>
+            <th>Year</th>
+            <th>Mark in percentage</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><input type="text" placeholder="Education name" onkeyup="getEducationValue(0,'name',this.value)" /></td>
+            <td><input type="text" placeholder="Institute name" onkeyup="getEducationValue(0,'institute',this.value)" /></td>
+            <td><input type="text" placeholder="Year of passed" onkeyup="getEducationValue(0,'year',this.value)"   /></td>
+            <td><input type="text" placeholder="Mark" onkeyup="getEducationValue(0,'mark',this.value)"   /></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><input type="text" placeholder="Education name" onkeyup="getEducationValue(1,'name',this.value)" /></td>
+            <td><input type="text" placeholder="Institute name" onkeyup="getEducationValue(1,'institute',this.value)" /></td>
+            <td><input type="text" placeholder="Year of passed" onkeyup="getEducationValue(1,'year',this.value)"   /></td>
+            <td><input type="text" placeholder="Mark" onkeyup="getEducationValue(0,'mark',this.value)"   /></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><input type="text" placeholder="Education name" onkeyup="getEducationValue(2,'name',this.value)" /></td>
+            <td><input type="text" placeholder="Institute name" onkeyup="getEducationValue(2,'institute',this.value)" /></td>
+            <td><input type="text" placeholder="Year of passed" onkeyup="getEducationValue(2,'year',this.value)"   /></td>
+            <td><input type="text" placeholder="Mark" onkeyup="getEducationValue(0,'mark',this.value)"   /></td>
+          </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    let education = [];
+    function getEducationValue(i,k,v){
+        
+  
+        education[i] = { 
+          ...education[i],
+          [k] : v
+        };
+
+
+       console.log(education);
+    }  
+
+
+</script>
+</html>
