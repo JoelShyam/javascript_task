@@ -3,5 +3,5 @@ let number=[1,2,3,4,5,6,7,8]
 //     return a+b
 // },0)
 
-let result=number.reduce((a,b)=>a+b)
+let result=number.reduce((a,b)=>a+b,0)
 console.log(result)

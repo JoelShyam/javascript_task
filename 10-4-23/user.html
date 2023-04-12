@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1><b>Register</b></h1>
+    <label>Name     : </label> <input type="text" id="name"> <br><br>
+    <label>Email ID :</label><input type="text" id="mail"><br><br>
+    <label>Password :</label><input type="text" id="pswd"><br><br>
+    <label>Phone No :</label><input type="text" id="phone"><br><br>
+    <label>Gender   :</label><select id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select><br><br>
+    <label>Skills   :</label>
+    <input type="checkbox" value="js" name="skills"><label>JS</label>
+    <input type="checkbox" value="c" name="skills"><label>C</label>
+    <input type="checkbox" value="java" name="skills"><label>Java</label>
+    <input type="checkbox" value="PHP" name="skills"><label>PHP</label>
+    <input type="checkbox" value=".Net" name="skills"><label>.Net</label><br><br>
+
+    <table id="tab" border=3>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Phone No</th>
+                <th>Gender</th>
+                <th>Skills</th>
+            </tr>
+        </thead>                
+
+  <tbody id="info"></tbody>
+
+
+
+    <button onclick="console.log(check())">submit</button>
+    <button id ="edit" onclick="editable()">edit</button><br><br>
+
+    
+
+</body>
+<script> var tableform=document.getElementById("tab")
+        
+    
+        function check() {
+            var arr = []
+        let name = document.getElementById('name').value
+        let email = document.getElementById('mail').value
+        let password = document.getElementById('pswd').value
+        let phone = document.getElementById('phone').value
+        let gender=document.getElementById("gender").value;
+        //skill
+        let total = []
+        var ski = document.getElementsByName('skills')
+        var skill;
+        for (var i = 0; i < ski.length; i++) {
+            if (ski[i].checked) {
+                skill = ski[i].value
+                total.push(skill)
+            }
+
+        }
+        
+            
+            let details = {
+                Name: name,
+                Email:email,
+                Password:password,
+                Phone: phone,
+                Gender:gender,
+                Skills: total,
+                
+                
+            }
+            arr.push(details)
+            
+            for(i=0;i<arr.length;i++){
+      let array=arr[i];
+      
+    
+       let row=document.createElement('tr');
+      
+      let Name=document.createElement('td');
+      Name.textContent=array.Name
+      row.appendChild(Name)
+      
+      
+      let Email=document.createElement('td');
+      Email.textContent=array.Email
+      row.appendChild(Email)
+
+      
+      let Password=document.createElement('td');
+      Password.textContent=array.Password
+       row.appendChild(Password)
+
+       let Phone=document.createElement('td');
+       Phone.textContent=array.Phone
+      row.appendChild(Phone)
+      
+      
+      let Gender=document.createElement('td');
+      Gender.textContent=array.Gender
+      row.appendChild(Gender)
+
+      
+      let Skills=document.createElement('td');
+      Skills.textContent=array.Skills
+       row.appendChild(Skills)
+
+      
+      tab.appendChild(row)
+        }
+        return arr
+    }
+    function editable(){
+        tab.contentEditable=true
+    }
+      
+       </script>
+
+ </html>

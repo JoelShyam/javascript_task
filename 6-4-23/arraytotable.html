@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<table id="tab" border=3>
+        <thead>
+            <tr>
+                
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+  <tbody id="info"></tbody>
+</body>
+  <script>
+    var result=document.getElementById("info");
+    var tableform=document.getElementById("tab")
+    let person=[{name:'joel shyam',age:24,city:'thirparappu'},
+                {name:'dilaharis',age:21,city:'villukuri'},
+                {name:'manas',age:23,city:'monday market'},
+                {name:'induja',age:22,city:'nagercoil'},
+                {name:'gokul',age:21,city:'erachakulam'},
+                {name:'manish',age:21,city:'krishnankoil'}]
+  /*et row=document.createElement('tr');
+      let name=document.createElement('th');
+      let age=document.createElement('th');
+      let city=document.createElement('th');
+    
+      name.textContent="Name"
+      row.appendChild(name)
+      table.appendChild(row)
+      name.textContent="Age"
+      row.appendChild(age)
+      table.appendChild(row)
+      name.textContent="City"
+      row.appendChild(city)
+      table.appendChild(row)*/
+      
+    for(i=0;i<person.length;i++){
+      let per=person[i];
+      
+    
+       let row=document.createElement('tr');
+      
+      let name=document.createElement('td');
+      name.textContent=per.name
+      row.appendChild(name)
+      
+      
+      let age=document.createElement('td');
+      age.textContent=per.age
+      row.appendChild(age)
+
+      
+      let city=document.createElement('td');
+      city.textContent=per.city
+       row.appendChild(city)
+
+      
+      tab.appendChild(row)
+    }
+  </script>
+</html>

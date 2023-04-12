@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Registration Form</title>
+ <h1>Registration Form</h1>
+ <form id="form">
+
+ <label for="name">Name:</label>
+ <input type="text" id="name"><br><br>
+ 
+ <label for="email">Email:</label>
+ <input type="email" id="email"><br><br>
+ 
+ <label for="password">Password:</label>
+ <input type="password" id="password"><br><br>
+  
+ <label for="phone">Phone No :</label>
+ <input type="text" id="phone"><br><br>
+    
+ <label for="gender">Gender   :</label>
+ <select id="gender">
+        <option>Male</option>
+        <option>Female</option>
+  </select><br><br>
+
+    <label for="skills">Skills   :</label>
+    <input type="checkbox" value="js" name="skills"><label>JS</label>
+    <input type="checkbox" value="c" name="skills"><label>C</label>
+    <input type="checkbox" value="java" name="skills"><label>Java</label>
+    <input type="checkbox" value="PHP" name="skills"><label>PHP</label>
+    <input type="checkbox" value=".Net" name="skills"><label>.Net</label><br><br>
+ 
+ </form>
+ <button onclick="submitForm()">Submit</button>
+ 
+ <br><br>
+ 
+ <table border="1" id="table">
+  <tr>
+   <th>Name</th>
+   <th>Email</th>
+   <th>Password</th>
+   <th>Phone</th>
+   <th>Gender</th>
+   <th>Skills</th>
+  </tr>
+ </table>
+ 
+</head>
+<body>
+  <script>
+    var selectedRow = null;
+    
+    function submitForm() {
+              // event.preventDefault();
+     var name = document.getElementById("name").value;
+     var email = document.getElementById("email").value;
+     var password = document.getElementById("password").value;
+     var phone = document.getElementById("phone").value;
+     var gender=document.getElementById("gender").value;
+
+        //skill
+     var total = []
+     var ski = document.getElementsByName('skills')
+     var skill;
+        for (var i = 0; i < ski.length; i++) {
+            if (ski[i].checked) {
+                skill = ski[i].value
+                total.push(skill)
+            }
+
+        }
+     
+     if (selectedRow == null) {
+      addRow(name, email, password,phone,gender,total);
+     } else {
+      editRow(name, email, password,phone,gender,total);
+     }
+     
+     clearForm();
+    }
+    
+    function addRow(name, email, password,phone,gender,total) {
+     var table = document.getElementById("table");
+     var row = table.insertRow();
+     var nameCell = row.insertCell(0);
+     var emailCell = row.insertCell(1);
+     var passwordCell = row.insertCell(2);
+     var phoneCell = row.insertCell(3);
+     var genderCell = row.insertCell(4);
+     var totalCell=row.insertCell(5)
+     var editCell = row.insertCell(6);
+     var deleteCell = row.insertCell(7);
+     nameCell.innerHTML = name;
+     emailCell.innerHTML = email;
+     passwordCell.innerHTML = password;
+     phoneCell.innerHTML = phone;
+     genderCell.innerHTML = gender;
+     totalCell.innerHTML=total;
+     editCell.innerHTML = '<button onclick="editRowFromTable(this)">Edit</button>';
+     deleteCell.innerHTML = '<button onclick="deleteRowFromTable(this)">Delete</button>';
+    }
+    
+    function editRow(name, email, password,phone,gender,total) {
+     selectedRow.cells[0].innerHTML = name;
+     selectedRow.cells[1].innerHTML = email;
+     selectedRow.cells[2].innerHTML = password;
+     selectedRow.cells[3].innerHTML = phone;
+     selectedRow.cells[4].innerHTML = gender;
+     selectedRow.cells[5].innerHTML = total;
+     selectedRow = null;
+    }
+    
+    function clearForm() {
+      form.reset();
+              // name.innerHTML= "";
+              // email.innerHTML= "";
+              // password.innerHTML= "";
+              // phone.innerHTML= "";
+              // gender.innerHTML= "";
+              // total.innerHTML= "";
+     // document.getElementById("name").value = "";
+     // document.getElementById("email").value = "";
+     // document.getElementById("password").value = "";
+     document.getElementById("gender").value = "";
+    }
+    
+    function editRowFromTable(button) {
+              console.log("data",button.parentNode.parentNode)
+     selectedRow = button.parentNode.parentNode;
+     document.getElementById("name").value = selectedRow.cells[0].innerHTML;
+     document.getElementById("email").value = selectedRow.cells[1].innerHTML;
+     document.getElementById("password").value = selectedRow.cells[2].innerHTML;
+     document.getElementById("phone").value = selectedRow.cells[3].innerHTML;
+     document.getElementById("gender").value = selectedRow.cells[4].innerHTML;
+     document.getElementsByName("skills").value = selectedRow.cells[5].innerHTML;
+     var forcheck=document.getElementsByName("skills");
+     var checkedskills=selectedRow.cells[5].innerHTML
+     //var splits=checkedskills.split(',')
+    forcheck.forEach((element)=>{
+      if(checkedskills.includes(element.value)){
+         element.checked=true
+      }
+      else{
+         element.checked=false
+      }
+
+    })
+
+     
+     
+    }
+    
+   //  function deleteRowFromTable(button) {
+   //            console.log("data",button)
+   //   var row = button.parentNode.parentNode;
+   //   row.parentNode.removeChild(row);
+   //  }
+
+     function deleteRowFromTable(button) {
+              //console.log("data",button)
+     var row = button.parentNode.parentNode;
+     row.remove()
+    }
+   </script>
+</body>
+</html>
