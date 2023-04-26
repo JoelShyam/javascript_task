@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Library Book Purchase</title>
+    <style>
+        .booklist{
+            width: 500px;
+            height: 50px;
+            border: 3px solid black;
+            display:flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .purchaselist{
+            width: 500px;
+            height: 50px;
+            border: 3px solid black;
+            display:flex;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    <h1>Library Books</h1>
+    <div class="booklist">
+    <div class="book" id="book1" onclick="books()" style="background-color: rgb(243, 129, 88);">book1</div>
+    <div class="book" id="book2" onclick="books()" style="background-color: rgb(78, 181, 38);">book2</div>
+    <div class="book" id="book3" onclick="books()" style="background-color: rgb(48, 153, 205);">book3</div>
+    <div class="book" id="book4" onclick="books()" style="background-color: rgb(253, 71, 207);">book4</div>
+    <div class="book" id="book5" onclick="books()" style="background-color: rgb(251, 50, 50);">book5</div>
+    </div>
+    <h1>Purchased Books</h1>
+    <div class="purchaselist">
+    <div style="background-color: rgb(243, 129, 88);"></div>
+    <div style="background-color: rgb(78, 181, 38);"></div>
+    <div style="background-color: rgb(48, 153, 205);"></div>
+    <div style="background-color: rgb(253, 71, 207);"></div>
+    <div style="background-color: rgb(251, 50, 50);"></div>
+    </div>
+</body>
+<script>
+    var arr=[]
+    function books(){
+     console.log(document.getElementById("book1").innerHTML)
+     if(document.getElementById("book1").innerHTML=="book1"){console.log(1)}
+     else if(document.getElementById("book1").innerHTML=="book2"){console.log(2)}
+     else if(document.getElementById("book1").innerHTML=="book3"){console.log(3)}
+
+    }
+    //  var booklist=document.getElementsByClassName("book")
+    // // console.log(booklist)
+
+    // for(i=0;i<booklist.length;i++){
+    //     console.log(booklist[i])
+    //     book.addEventListener('click',moving())
+    // }
+    // moving(){
+    //     console.log(book)
+    // }
+
+    // booklist.forEach(abook=>
+    // (abook.addEventListener("click",()=>{
+    //     booknumbers=abook.innerHTML
+    //     console.log(booknumbers)
+    // })))
+</script>
+</html>

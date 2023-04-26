@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Document</title>
+   <style>
+   body{
+       margin: 0;
+       background-color: #f5e8ba;
+   }
+   #container h2{
+       display: flex;
+       justify-content: center;
+       
+   
+   }
+   h2{
+       color:#ffeba7;
+       letter-spacing: 1px;
+   }
+   input{
+       border-radius: 5px;
+       border: 2px solid black;
+       margin-top: 30px;
+       height: 3 em;
+       width: 250px;
+       padding-left: 10px;
+   }
+   input:active{
+       border: none;
+   
+   }
+   #container{
+       height: 500px;
+       width: 400px;
+       margin: 200px auto;
+       background-color: #21abcd;
+       border-radius: 10px;
+       padding: 30px;
+   }
+   button{
+       margin-top: 20px;
+       background-color: #ff6db8;
+       border-radius: 4px;
+       height: 44px;
+       font-weight: 600;
+       padding: 0 30px;
+       letter-spacing: 1px;
+       border: none;
+       color: #102770;
+   
+   }
+   button:hover{
+       cursor: pointer;
+   }
+   #todolist{
+       margin: 10px 0px;
+   }
+   #todolist p{
+       margin: 10px 0px;
+       color: aliceblue;
+   }
+   #todolist p:hover{
+       cursor: pointer;
+   }
+</style>
+</head>
+<body>
+    <div id="container">
+        <h2>TODO LIST</h2>
+        <input type="text" id="input" >
+        <button id="add" >Add</button>
+        <div id="todolist">
+        
+        </div>
+            </div>
+</body>
+<script>
+     button=document.getElementById('add')
+let todolist=document.getElementById('todolist')
+let input=document.getElementById('input')
+let todos=[]
+
+
+button.addEventListener('click',()=>{
+    todos.push(input.value);
+    addtodo(input.value)
+    input.value=''
+})
+
+
+function addtodo(todo){
+    let para=document.createElement('p');
+    para.setAttribute('id','mypara')
+    para.innerText=todo;
+    todolist.appendChild(para)
+
+    let Edit=document.createElement('button');
+    Edit.setAttribute('id','edittdl')
+    Edit.textContent='Edit'
+    todolist.appendChild(Edit)
+
+    Edit.addEventListener('click',function(){
+        para.remove()
+        Edit.remove()
+        del.remove()
+        document.getElementById('input').value=para.innerHTML;
+    })/*
+    function after(){
+        para.innerHTML=document.getElementById('input')
+
+    }*/
+
+
+    let del=document.createElement('button');
+    del.setAttribute('name','edittdl')
+    del.textContent='Delete'
+    todolist.appendChild(del)
+
+    del.addEventListener('click',function(){
+        para.remove()
+        Edit.remove()
+        del.remove()
+        document.getElementById('input').value=''
+    })
+    para.addEventListener("click",()=>{
+        para.style.textDecoration='line-through';
+        // remove(todo)
+    })
+    para.addEventListener('dblclick',()=>{
+        para.style.textDecoration='none';
+        remove(todo);
+    })}
+    function remove(todo){
+        let index=todos.indexOf(todo)
+        if(index>-1){
+           todos.splice(index,1);
+        
+        }
+
+
+        
+    }
+</script>
+</html>

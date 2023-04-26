@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quiz Task</title>
+    <style>
+    form{
+        background-color: rgb(15, 216, 129);
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+    h1{
+        display: flex;justify-content: center;
+    }
+    #content{
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+    html{
+        background-color: rgb(241, 207, 11);
+    }
+    p{
+        background-color: rgb(189, 194, 199);
+        display:block;
+        align-items: center;
+    }
+   </style>
+    <form id="form">
+        <h1>Quiz</h1>
+<div id="content">
+    <div id="qn1">
+        <p id="q1"><b>1. How many bones do we have in an ear?</b></p>
+        <input id="opt" type="radio" name="q1opt" value="4">4</input><br>
+        <input id="opt" type="radio" name="q1opt" value="7">7</input><br>
+        <input type="radio" name="q1opt" value="3">3</input><br>
+        <input type="radio" name="q1opt" value="2">2</input><br>
+        <p id="a1"></p>
+    </div>
+    <div id="qn2">
+        <p id="q2"><b>2. Which Day is celebrated as "World Programmer's Day"? </b></p>
+        <input type="radio" name="q2opt" value="Oct 17">Oct 17</input><br>
+        <input type="radio" name="q2opt" value="Sep 13">Sep 13</input><br>
+        <input type="radio" name="q2opt" value="Apr 29">Apr 29</input><br>
+        <input type="radio" name="q2opt" value="Jul 6">Jul 6</input><br>
+        <p id="a2"></p>
+    </div>
+    <div id="qn3">
+        <p id="q3"><b>3. What is the only continent with land in all four hemispheres?</b></p>
+        <input type="radio" name="q3opt" value="North America">North America</input><br>
+        <input type="radio" name="q3opt" value="Europe">Europe</input><br>
+        <input type="radio" name="q3opt" value="Africa">Africa</input><br>
+        <input type="radio" name="q3opt" value="Asia">Asia</input><br>
+        <p id="a3"></p>
+    </div>
+    <div id="qn4">
+        <p id="q4"><b>4. Aureolin is a shade of what color?</b></p>
+        <input type="radio" name="q4opt" value="Yellow">Yellow</input><br>
+        <input type="radio" name="q4opt" value="Blue">Blue</input><br>
+        <input type="radio" name="q4opt" value="Red">Red</input><br>
+        <input type="radio" name="q4opt" value="Green">Green</input><br>
+        <p id="a4"></p>
+    </div>
+    <div id="qn5">
+        <p id="q5"><b>5. Name the deepest oceanic trench on Earth?</b></p>
+        <input type="radio" name="q5opt" value="Philippine Trench">Philippine Trench</input><br>
+        <input type="radio" name="q5opt" value="Kuril Kamchatka Trench">Kuril Kamchatka Trench</input><br>
+        <input type="radio" name="q5opt" value="Tonga Trench">Tonga Trench</input><br>
+        <input type="radio" name="q5opt" value="Mariana Trench">Mariana Trench</input><br>
+        <p id="a5"></p><br><br>
+    </div>
+        <div id="res" style="background-color: rgb(242, 152, 254);color:rgb(0, 0, 0);display:flex;justify-content: center;"><b></b></div>
+    <div  style="background-color: rgb(15, 216, 129);display:flex;justify-content: center;">
+    <button type="button" onclick="quiz()">Submit</button>
+    <button type="button" onclick="clearform()">Clear</button>
+    </div>
+</div>
+    </form>
+</head>
+<body>
+    <script>
+function quiz(){
+    var ans1=document.getElementsByName("q1opt");
+    var ans2=document.getElementsByName("q2opt");
+    var ans3=document.getElementsByName("q3opt");
+    var ans4=document.getElementsByName("q4opt");
+    var ans5=document.getElementsByName("q5opt");
+    var res=document.getElementById("res");
+    var count=0;
+    for(i=0;i<ans1.length;i++){
+        if(ans1[i].checked){
+        if(ans1[i].value=='3'){
+        document.getElementById("a1").innerHTML="'Correct Answer'"
+        count++
+            }
+        else{
+                document.getElementById("a1").innerHTML="'Incorrect Answer' Answer: 3"
+            }
+        }
+        else if(ans2[i].checked){
+        if(ans2[i].value=='Sep 13'){
+        document.getElementById("a2").innerHTML="'Correct Answer'"
+        count++
+            }
+        else{
+                document.getElementById("a2").innerHTML="'Incorrect Answer' Answer: Sep 13"
+            }
+        }
+        else if(ans3[i].checked){
+        if(ans3[i].value=='Africa'){
+        document.getElementById("a3").innerHTML="'Correct Answer'"
+        count++
+            }
+        else{
+                document.getElementById("a3").innerHTML="'Incorrect Answer' Answer: Africa"
+            }
+        }
+        else if(ans4[i].checked){
+        if(ans4[i].value=='Yellow'){
+        document.getElementById("a4").innerHTML="'Correct Answer'"
+        count++
+            }
+        else{
+                document.getElementById("a4").innerHTML="'Incorrect Answer' Answer: Yellow"
+            }
+        }
+        else if(ans5[i].checked){
+        if(ans5[i].value=='Mariana Trench'){
+        document.getElementById("a5").innerHTML="'Correct Answer'"
+        count++
+            }
+        else{
+                document.getElementById("a5").innerHTML="'Incorrect Answer' Answer: Mariana Trench"
+            }
+        }
+    }
+       document.getElementById("res").innerHTML="You have scored"+count+"points"
+    }
+    function clearform(){
+        form.reset()
+        document.getElementById("res").innerHTML=""
+        document.getElementById("a1").innerHTML=""
+        document.getElementById("a2").innerHTML=""
+        document.getElementById("a3").innerHTML=""
+        document.getElementById("a4").innerHTML=""
+        document.getElementById("a5").innerHTML=""
+    }
+    </script>
+</body>
+</html>

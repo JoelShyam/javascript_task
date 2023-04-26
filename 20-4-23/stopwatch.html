@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            display: flex;justify-content: center;margin-top: 200px;background-color: rgb(255, 255, 255);
+        }
+    #start{background-color: rgb(14, 216, 14);box-shadow: 5px 5px;}
+    #stop{background-color: rgb(255, 0, 0);box-shadow: 5px 5px;}
+    #reset{background-color: yellow;box-shadow: 5px 5px;}
+  #con{
+    background-color: rgb(222, 150, 191);border: solid black;box-shadow: 10px 10px;border-radius: 10%;
+  }
+  #con1{
+    /* border-radius: 100%; */
+    background-color: rgb(222, 150, 191);
+    display:flex;
+    justify-content: center;
+     align-items: center;
+     line-height: 150px;width:400px;
+  } 
+  #con2{
+    background-color: rgb(222, 150, 191);
+    display:flex;
+    justify-content:space-around;
+    align-items:flex-start;
+    height: 100px;
+    width:400px;
+    font-size: 300px;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+}
+span.time{
+    font-size:35px;
+}
+span.text{
+    font-size:30px;
+}
+body{
+    background-color: rgb(231, 141, 30);
+}
+
+   
+    </style>
+    <title>Stopwatch</title>
+</head>
+<body>
+    <div id="con">
+        <h1 style="display: flex;justify-content: center;color: darkred;">StopWatch</h1>
+    <div id="con1">
+        <span id="hr" class="time" >00</span>
+        <span class="text">Hr</span>
+        <span style="font-size: 35px;">:</span>
+        <span id="min"class="time">00</span>
+        <span class="text">Min </span>
+        <span style="font-size: 35px;">:</span>
+        <span id="sec"class="time">00</span>
+        <span class="text">Sec </span>
+        <span style="font-size: 35px;">:</span>
+        <span id="ms" class="time">00</span>
+        <span class="text">Msec</span>
+    </div>
+<div id="con2">
+     <button style="font-size: 20px;border-radius:70% ;" onclick="start()" type="button" id="start">Start</button>
+     <button style="font-size: 20px;border-radius:70% " onclick="stop()" type="button" id="stop">Stop</button>
+     <button style="font-size: 20px;border-radius:70% " onclick="reset()" type="button" id="reset">Reset</button>
+    </div></div>
+</body>
+<script>
+    var hr=document.getElementById("hr");
+    var min=document.getElementById("min");
+    var sec=document.getElementById("sec")
+    var ms=document.getElementById("ms")
+    var hour=0;
+    var min=0;
+    var sec=0;
+    var msec=0;
+    var timer;
+    function sw(){
+        if(timer){
+            msec++
+            if(msec==100){
+            sec++
+            msec=0}
+            if(sec==60){
+                min++
+                sec=0}
+            if(min==60){
+                hour++
+                min=0}
+            var hrstring=hour
+            var minstring=min
+            var secstring=sec
+            var msecstring=msec
+            hrstring=(hour<10)?"0"+hrstring:hrstring
+            minstring=(min<10)?"0"+minstring:minstring
+            secstring=(sec<10)?"0"+secstring:secstring
+            msecstring=(msec<10)?"0"+msecstring:msecstring
+            document.getElementById("hr").innerHTML=hrstring;
+            document.getElementById("min").innerHTML=minstring;
+            document.getElementById("sec").innerHTML=secstring;
+            document.getElementById("ms").innerHTML=msecstring;
+            setTimeout(sw,10)
+            }
+ }
+function start(){
+        timer=true
+        sw()
+        }
+    function stop(){
+        timer=false
+}
+    function reset(){
+        timer=false
+        hour=0
+        min=0
+        sec=0
+        msec=0
+        document.getElementById("hr").innerHTML="00"
+        document.getElementById("min").innerHTML="00"
+        document.getElementById("sec").innerHTML="00"
+        document.getElementById("ms").innerHTML="00"
+    }
+</script>
+</html>

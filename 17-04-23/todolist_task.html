@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+    html{
+      margin:30px 190px;
+         background-color:rgb(85, 249, 255)
+      }
+      
+      table{
+         background-color:rgb(141, 166, 155);color:rgb(0, 4, 255)
+      }
+      div{
+         border: 5px solid black;
+         margin:100px 200px;
+         background-color:rgb(255, 255, 255);
+          width:500px;
+         height:400px; 
+         display:block;
+         justify-content: center;
+         align-items: center;
+      }
+      /* head{
+         display:flex;
+         justify-content: center;
+         align-items: center;
+      } */
+      /* form{
+         display:block;
+         justify-content: center;
+         align-items: center;
+      } */
+      
+
+   </style>
+ <title>ToDo List Task</title>
+ <div style="text-align: center;">
+ <h1 style="background-color:rgb(101, 219, 85);color:rgb(0, 0, 0);display:flex;justify-content:center">Todo List</h1>
+
+ 
+   <form id="form">
+   <label style="display:flex;justify-content:center" for="tasks"><b>Add Tasks</b></label><br>
+   <input style="background-color:pink;color:rgb(0, 0, 0)" type="text" id="tasks" /><br>
+   <span  style="color:rgb(255, 0, 0);display:flex;justify-content:center"id="message">
+   </span>
+   </form>
+ <button style="background-color:rgb(39, 34, 39);color:rgb(255, 255, 255)" onclick="submitForm()">Submit</button> <br><br>
+ <table border="0" id="table" style="background-color:rgb(255, 255, 255);display:flex;justify-content:center">
+   <tr>
+      <th>Tasks To be Done</th>
+   </tr>
+ </table>
+ </form>
+ </div>
+</head>
+<body>
+  <script>
+    var selectedRow = null;
+    function submitForm() {
+    var tasks = document.getElementById("tasks").value;
+    if (selectedRow == null) {
+      add(tasks);
+     } else {
+      edit(tasks);
+     }
+    clearForm();
+    }
+    function add(tasks) {
+        if(tasks){
+     var table = document.getElementById("table");
+     var row = table.insertRow();
+     var tasksCell = row.insertCell(0);
+     var editCell = row.insertCell(1);
+     var deleteCell = row.insertCell(2);
+     var completed=row.insertCell(3);
+     tasksCell.innerHTML = tasks;
+     editCell.innerHTML ='<button style="background-color:green;color:rgb(255, 255, 255)"onclick="edittasks(this)">Edit</button>';
+     deleteCell.innerHTML='<button style="background-color:red;color:rgb(255, 255, 255)"onclick="deletetasks(this)">Delete</button>';
+     completed.innerHTML= '<input type="checkbox" onClick="strike(this)"id="completed">';
+   //  
+     document.getElementById("message").innerHTML=''
+     
+    }
+    else
+    {
+      document.getElementById("message").innerHTML="'Input field should not be Empty'"
+        //alert("input should not be empty")
+    }
+}
+    function edit(tasks) {
+     selectedRow.cells[0].innerHTML = tasks;
+     selectedRow = null;
+    }
+    function clearForm() {
+      form.reset()
+      
+    }
+    function strike(input){
+    selectedRow=input.parentNode.parentNode;
+   // console.log(selectedRow)
+    //console.log((selectedRow.cells[0]).innerHTML)
+    var txt=selectedRow.cells[0].innerHTML
+    //console.log(txt)
+   var txtchange='̶'+txt.split('').join('̶') +'̶'
+    if(completed.checked){
+      // alert(2)
+   
+  // console.log('̶'+txt.split('').join('̶') +'̶')
+   selectedRow.cells[0].innerHTML=txtchange
+   // selectedRow=null
+      // txt.style.textDecoration ='line-through';
+    }
+  
+else{
+   // alert(4)
+   // selectedRow.cells[0].innerHTML=txt
+   var nrmltxt=txtchange.split('̶').join('')
+   selectedRow.cells[0].innerHTML=nrmltxt
+   selectedRow=null
+   // console.log(nrmltxt)
+   }
+   selectedRow=null
+      //tasks.innerHTML='<style="text-decoration:line-through">'
+      //tasks.innerHTML=tasks.style.color='green'
+     
+   }
+    function edittasks(button) {
+      //console.log(button)
+     selectedRow = button.parentNode.parentNode;
+     document.getElementById("tasks").value = selectedRow.cells[0].innerHTML;
+    }
+     function deletetasks(button){
+
+     var row = button.parentNode.parentNode;
+     row.remove()
+    }
+   </script>
+</body>
+</html>

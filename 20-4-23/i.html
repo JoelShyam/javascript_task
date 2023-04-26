@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         /* #heart {
+      position: relative;
+      width: 100px;
+      height: 90px;
+    }
+    #heart:before,
+    #heart:after {
+      position: absolute;
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      content: "";
+      left: 50px;
+      top: 0;
+      width: 50px;
+      height: 80px;
+      background: rgb(0, 140, 255);
+      border-radius: 50px 50px 0 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+    #heart:after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    } */
+   
+   
+    #heart {
+  width: 50px;
+  display: inline-block;
+  -webkit-mask: 
+     radial-gradient(circle at 60% 65%, rgb(28, 190, 253) 64%, transparent 65%) top left,
+     radial-gradient(circle at 40% 65%, rgb(28, 190, 253) 64%, transparent 65%) top right,
+     linear-gradient(to bottom left, rgb(29, 241, 252) 43%,transparent 43%) bottom left,
+     linear-gradient(to bottom right,rgb(8, 234, 242) 43%,transparent 43%) bottom right;
+  -webkit-mask-size: 50% 50%;
+  -webkit-mask-repeat: no-repeat;
+  mask: 
+     radial-gradient(circle at 60% 65%, red 64%, transparent 65%) top left,
+     radial-gradient(circle at 40% 65%, red 64%, transparent 65%) top right,
+     linear-gradient(to bottom left, red 43%,transparent 43%) bottom left,
+     linear-gradient(to bottom right,red 43%,transparent 43%) bottom right;
+  mask-size: 50% 50%;
+  mask-repeat: no-repeat;
+  background: linear-gradient(red,blue);
+}
+
+#heart::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+    </style>
+    <div id="heart"></div>
+</head>
+<body>
+    
+</body>
+</html>
